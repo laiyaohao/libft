@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylai <ylai@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:46:04 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/13 21:52:03 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/15 14:18:50 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 

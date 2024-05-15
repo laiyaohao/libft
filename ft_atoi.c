@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 15:23:34 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/15 17:55:02 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/15 11:50:37 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/15 14:24:02 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	islower(int c)
-{
-	if (c <= 'z' && c >= 'a')
-	{
-		return (1);
-	}
-	return (0);
-}
+#include "libft.h"
 
-static int	isupper(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (c <= 'Z' && c >= 'A')
-	{
-		return (1);
-	}
-	return (0);
-}
+	long	i;
+	long	ans;
+	int		sign;
 
-int	ft_isalpha(int c)
-{
-	if (!((islower(c)) || (isupper(c))))
+	i = 0;
+	ans = 0;
+	sign = 1;
+	while ((nptr[i] >= 9 && nptr <= 13) || nptr == 32)
+		i++;
+	while (nptr[i] == '-' || nptr[i] == '+')
 	{
-		return (0);
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (1);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		ans = ans * 10 + (nptr[i] - 48);
+		i++;
+	}
+	if (sign == -1)
+		ans = ans * -1;
+	return (ans);
 }

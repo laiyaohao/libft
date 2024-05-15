@@ -6,17 +6,17 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:31:23 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/13 20:31:25 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/15 14:18:26 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if (ft_isalpha(c) || ft_isdigit(c))
-    {
-        return (1);
-    }
-    return (0);
+	if (ft_isalpha(c) || ft_isdigit(c))
+	{
+		return (1);
+	}
+	return (0);
 }

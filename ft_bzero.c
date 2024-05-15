@@ -3,24 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylai <ylai@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:49:53 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/13 20:58:22 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/15 17:54:23 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (s && i < n)
-	{
-		s = '\0';
-		s++;
-		i++;
-	}
+	memset(s, 0, n);
 }

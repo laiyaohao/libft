@@ -6,27 +6,27 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:38:23 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/13 20:38:26 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/15 14:42:26 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s)
-    {
-        if (s[i] == c)
-        {
-            return (s);
-        }
-        i++;
-        s++;
-    }
-    if (c != 0)
-    {
-        return (0);
-    }
-    return (s);
+	i = 0;
+	while (s)
+	{
+		if (s[i] == c)
+		{
+			return (s);
+		}
+		i++;
+		s++;
+	}
+	if (c != 0)
+	{
+		return (0);
+	}
+	return (s);
 }
