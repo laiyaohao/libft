@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:31:23 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/15 14:18:26 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/16 23:18:18 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
 	{
-		return (1);
+		return (8);
 	}
 	return (0);
 }
