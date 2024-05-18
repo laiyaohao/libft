@@ -1,7 +1,7 @@
 NAME := libft.a
 CC := cc
 CFLAGS := -Wall -Werror -Wextra
-SRCS := ${wildcard ft_*.c}
+SRCS := ${wildcard ft_*.c} #maybe can individually name them?
 OBJS := ${SRCS:.c=.o}
 
 # Default target
@@ -9,13 +9,18 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	ar rcs $@ $^
-${OBJS}: ${CC} ${CFLAGS} $@
+${OBJS}:
+	${CC} ${CFLAGS} ${SRCS} -o $@
 
 
 clean:
-	rm -f ${OBJS} ${NAME}
-fclean: clean
-re: fclean all
+	rm -f ${OBJS}
+fclean:
+	clean
+	rm -f ${NAME}
+re:
+	fclean
+	all
 
 # Phony targets
-.PHONY: all clean
+.PHONY: all clean fclean re

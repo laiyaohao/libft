@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 17:49:53 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/18 16:28:49 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/18 00:17:16 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/18 16:44:01 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strdup(const char *s)
 {
-	ft_memset(s, 0, n);
+	size_t	len;
+	char	*ans;
+	size_t	i;
+
+	i = 0;
+	len = ft_strlen(s);
+	ans = (char *) malloc(len * sizeof(char));
+	while (i < len)
+	{
+		ans[i] = s[i];
+		i++;
+	}
+	return (ans);
 }

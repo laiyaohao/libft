@@ -6,11 +6,12 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 21:53:20 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/15 16:57:06 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/18 15:31:27 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_strlen.c"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
