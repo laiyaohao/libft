@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 21:53:20 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 18:41:49 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/19 21:55:25 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/19 22:00:25 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	dst_len;
-	size_t	ta_len;
 	size_t	i;
-	size_t	src_len;
+	size_t	len;
 
 	i = 0;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	ta_len = size - dst_len - 1;
-	if (ta_len <= 0 || src_len == 0)
-		return (dst_len);
-	while (i < ta_len && *src)
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		dst[dst_len + i] = src[i];
-		src++;
+		f(i, &*s);
+		s++;
 		i++;
 	}
-	if (src_len == i)
-		dst[dst_len + i] = 0;
-	return (dst_len + i);
 }

@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:41:32 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/15 17:22:44 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/19 18:31:06 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,28 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	// move n bytes from src to temp array
-	// that does not overlap src or dest
-	// then move the elements in temp array
-	// to dest
-	unsigned char	temp_arr[n];
-	unsigned char	*src_map;
-	int						i;
-	
-	i = 0;
-	*src_map = src;
-	while (i < n)
+	size_t			i;
+	unsigned char	*s;
+	unsigned char	*d;
+
+	s = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (d > s && d < s + n)
 	{
-		temp_arr[i] = src_map[i];
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			d[i - 1] = s[i - 1];
+			i--;
+		}
 	}
-	i = 0;
-	while ()
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			d[i] = s[i];
+		}
+	}
+	return (dest);
 }

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 21:53:20 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 18:41:49 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/19 20:33:24 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/19 20:42:10 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	dst_len;
-	size_t	ta_len;
 	size_t	i;
-	size_t	src_len;
+	unsigned char	*s1u;
+	unsigned char	*s2u;
 
 	i = 0;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	ta_len = size - dst_len - 1;
-	if (ta_len <= 0 || src_len == 0)
-		return (dst_len);
-	while (i < ta_len && *src)
+	s1u = (unsigned char *)s1;
+	s2u = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while (i < n && s1u[i] == s2u[i])
 	{
-		dst[dst_len + i] = src[i];
-		src++;
 		i++;
 	}
-	if (src_len == i)
-		dst[dst_len + i] = 0;
-	return (dst_len + i);
+	return (s1u[i] - s2u[i]);
 }

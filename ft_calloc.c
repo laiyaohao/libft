@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 23:51:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/18 16:49:43 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/19 16:17:21 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	}
 	pter = (void *) malloc(t_size);
+	if (pter == NULL)
+	{
+		return (0);
+	}
 	return (ft_memset(pter, 0, t_size));
 }

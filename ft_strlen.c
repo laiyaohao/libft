@@ -6,13 +6,13 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:46:04 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/18 16:33:30 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/19 20:56:03 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
