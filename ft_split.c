@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:43:17 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/21 21:21:59 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/21 21:39:33 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/21 21:54:45 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	char	*ans;
+	unsigned int	i;
+	unsigned int	j;
+	char	*sub_s;
 
 	i = 0;
-	ans = (char *)malloc(len * (sizeof(char)));
-	if (ans == NULL)
+	j = 0;
+	while (*s)
 	{
-		return (NULL);
-	}
-	while (i < len)
-	{
-		ans[i] = s[start + i];
+		if (*s == c)
+		{
+			sub_s = (char *) malloc(sizeof(char) * j);
+			free(sub_s);
+		}
 		i++;
+		j = i;
 	}
-	ans[start + i] = '\0';
-	return (ans);
 }

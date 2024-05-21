@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 20:43:17 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/21 21:21:59 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/20 17:54:06 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/21 20:58:31 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	char	*ans;
+	t_list	*ans;
 
-	i = 0;
-	ans = (char *)malloc(len * (sizeof(char)));
-	if (ans == NULL)
-	{
-		return (NULL);
-	}
-	while (i < len)
-	{
-		ans[i] = s[start + i];
-		i++;
-	}
-	ans[start + i] = '\0';
+	ans = (t_list *)malloc(sizeof(t_list));
+	ans->content = content;
+	ans->next = NULL;
 	return (ans);
 }

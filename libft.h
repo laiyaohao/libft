@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:20:18 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 21:24:09 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/21 20:09:53 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+}	t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
