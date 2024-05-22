@@ -6,11 +6,10 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 00:20:27 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 18:06:37 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/22 13:24:40 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

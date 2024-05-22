@@ -6,10 +6,23 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:38:23 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 21:00:29 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/22 18:28:29 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+/**
+ * @brief Locates a character in string.
+ *
+ * This function finds the first occurance of int `c` in string
+ * `s`.
+ *
+ * @param s Pointer to the string s.
+ * @param c Value to find. The value is passed as an int.
+ * @return Returns a pointer to the first occurance of the character 'c'
+ *         in the string s.
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	char	*s1_cpy;

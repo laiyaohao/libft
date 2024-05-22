@@ -6,7 +6,7 @@
 #    By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/19 19:24:17 by ylai              #+#    #+#              #
-#    Updated: 2024/05/21 22:20:37 by ylai             ###   ########.fr        #
+#    Updated: 2024/05/22 14:32:01 by ylai             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	ar rcs $@ $^
+
 ${OBJS}: ${SRCS}
 	${CC} ${CFLAGS} ${SRCS} $@ -o $<
-
 
 clean:
 	rm -f ${OBJS}

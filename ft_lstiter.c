@@ -6,17 +6,19 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 01:54:38 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/21 21:00:04 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/22 22:07:20 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst->next)
+	if (f == NULL)
+		return ;
+	while (lst)
 	{
-		f(lst->content);
+		(*f)(lst->content);
 		lst = lst->next;
 	}
 }

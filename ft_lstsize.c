@@ -6,18 +6,18 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 01:40:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/21 20:59:08 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/22 14:32:48 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
 	i = 0;
-	while (lst->next)
+	while (lst)
 	{
 		lst = lst->next;
 		i++;

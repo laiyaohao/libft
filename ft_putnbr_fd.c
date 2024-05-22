@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 01:35:06 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 14:16:19 by ylai             ###   ########.fr       */
+/*   Created: 2024/05/22 21:28:42 by ylai              #+#    #+#             */
+/*   Updated: 2024/05/22 21:49:58 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void ft_putnbr_fd(int n, int fd)
 {
-	if (lst)
+	unsigned int	n_cpy;
+	
+	if (n < 0)
 	{
-		if (*lst)
-		{
-			new->next = *lst;
-		}
-		*lst = new;
+		n_cpy = -n;
+		ft_putchar_fd('-', fd);
+	}
+	else
+	{
+		n_cpy = n;
+	}
+	if (n_cpy < 10)
+	{
+		ft_putchar_fd((n_cpy + 48), fd);
+	}
+	else
+	{
+		ft_putnbr_fd((n_cpy / 10), fd);
+		ft_putnbr_fd((n_cpy % 10), fd);
 	}
 }

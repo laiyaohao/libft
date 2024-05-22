@@ -6,11 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:54:06 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/21 20:58:31 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/22 13:25:57 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
