@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:53:29 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 22:08:07 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/25 10:29:07 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	if (lst)
 	{
-		(*del)(lst->content);
+		del(lst->content);
 		free(lst);
 	}
-}
+}	

@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:38:23 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 18:28:29 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/25 11:19:19 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*s1_cpy;
-	
+
 	s1_cpy = (char *)s;
 	while (*s1_cpy)
 	{

@@ -6,11 +6,10 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 00:17:16 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 21:54:20 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/25 11:02:52 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)

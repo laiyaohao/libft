@@ -6,51 +6,97 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:39:33 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 18:54:33 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/25 18:21:10 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	allocate(char **s, int index, int len)
+{
+	int	i;
+
+	i = 0;
+	s[index] = (char *)malloc(sizeof(char) * (len + 1));
+	if (s[index] == NULL)
+	{
+		while (i < index)
+		{
+			free(s[i]);
+			i++;
+		}
+		free(s);
+		return (1);
+	}
+	return (0);
+}
+
+int	fill(char const *s, char **ans, char c)
+{
+	size_t	len;
+	int		i;
+
+	i = 0;
+	while (*s)
+	{
+		len = 0;
+		while (*s == c && *s)
+			s++;
+		while (*s != c && *s)
+		{
+			len++;
+			s++;
+		}
+		if (len)
+		{
+			if (allocate(ans, i, len))
+				return (1);
+			ft_strlcpy(ans[i], s - len, len + 1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 size_t	num_o(char const *s, char c)
 {
 	size_t	num;
-	
+	int		inside;
+
 	num = 0;
 	while (*s)
 	{
-		if (*s == c)
-			num++;
+		inside = 0;
+		while (*s == c && *s)
+			s++;
+		while (*s != c && *s)
+		{
+			if (inside == 0)
+			{
+				num++;
+				inside = 1;
+			}
+			s++;
+		}
 	}
 	return (num);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	i;
-	unsigned int	prev;
-	char	*sub_s;
 	char	**ans;
-	size_t	size;
+	int		size;
 
-	i = 0;
-	prev = 0;
-
-	// find the number of occurance of c;
-	// number of c determines the size of **size
-	// need to add one for the null pointer
+	if (s == NULL)
+		return (NULL);
 	size = num_o(s, c);
-	ans = (char **) malloc(sizeof(char *) * (size + 1));
-	while (*s)
+	ans = (char **)malloc(sizeof(char *) * (size + 1));
+	if (ans == NULL)
+		return (NULL);
+	ans[size] = NULL;
+	if (fill(s, ans, c))
 	{
-		if (*s == c)
-		{
-			// insert from backwards
-			sub_s = (char *) malloc(sizeof(char) * prev);
-			ft_substr(*s, start, len);
-			free(sub_s);
-			prev = i;
-		}
-		i++;
+		return (NULL);
 	}
+	return (ans);
 }

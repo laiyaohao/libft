@@ -6,7 +6,7 @@
 #    By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/19 19:24:17 by ylai              #+#    #+#              #
-#    Updated: 2024/05/22 14:32:01 by ylai             ###   ########.fr        #
+#    Updated: 2024/05/25 11:15:37 by ylai             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_memchr.c \
 ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 ft_strjoin.c ft_putchar_fd.c ft_putstr_fd.c
 OBJS := ${SRCS:.c=.o}
+BONUS := ft_lstadd_back.c ft_lstadd_front.c
 
 # Default target
 all: ${NAME}
@@ -27,7 +28,9 @@ ${NAME}: ${OBJS}
 	ar rcs $@ $^
 
 ${OBJS}: ${SRCS}
-	${CC} ${CFLAGS} ${SRCS} $@ -o $<
+	${CC} ${CFLAGS} -c ${SRCS} $@
+
+bonus:
 
 clean:
 	rm -f ${OBJS}

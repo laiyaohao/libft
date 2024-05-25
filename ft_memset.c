@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:45:41 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 14:46:04 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/25 18:22:41 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
-	size_t				i;
+	size_t			i;
 
 	i = 0;
 	p = (unsigned char *)s;

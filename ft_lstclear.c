@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:56:04 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 22:12:54 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/25 11:21:12 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,19 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
+	t_list	*cur;
 
 	if (del == NULL)
 		return ;
-	
-	if (lst)
+	if (lst && *lst)
 	{
-		if (*lst)
+		cur = *lst;
+		while (cur)
 		{
-			while (*lst)
-			{
-				temp = (*(*lst)).next;
-				ft_lstdelone(*lst, del);
-				*lst = temp;
-			}
+			temp = cur;
+			cur = cur->next;
+			ft_lstdelone(*lst, del);
 		}
+		*lst = NULL;
 	}
 }
