@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 21:00:58 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/25 18:22:27 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 18:00:42 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	dst_l;
+	size_t	src_l;
 
 	i = 0;
-	if (size <= 0 || *src == '\0')
+	src_l = ft_strlen(src);
+	if (size > 0)
 	{
-		return (0);
+		while (i < (size - 1) && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst_l = ft_strlen(dst);
-	while (i < size - 1 && *src && i < dst_l - 1)
-	{
-		*dst = *src;
-		src++;
-		dst++;
-		i++;
-	}
-	*dst = '\0';
-	return (i);
+	return (src_l);
 }

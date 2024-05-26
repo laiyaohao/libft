@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:41:32 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 18:31:06 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 17:26:31 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-		}
+		ft_memcpy(d, s, n);
 	}
 	return (dest);
 }

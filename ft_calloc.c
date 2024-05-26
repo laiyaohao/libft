@@ -6,13 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 23:51:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/21 22:02:39 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 14:21:25 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

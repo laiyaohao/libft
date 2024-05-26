@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 21:53:20 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 18:41:49 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 18:16:36 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	ta_len = size - dst_len - 1;
 	if (ta_len <= 0 || src_len == 0)
 		return (dst_len);
-	while (i < ta_len && *src)
+	while (i < ta_len && src[i])
 	{
 		dst[dst_len + i] = src[i];
-		src++;
 		i++;
 	}
 	if (src_len == i)
 		dst[dst_len + i] = 0;
-	return (dst_len + i);
+	return (dst_len + src_len);
 }

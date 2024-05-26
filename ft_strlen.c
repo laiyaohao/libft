@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:46:04 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/25 17:39:40 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 15:44:03 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (str++)
+	while (*str++)
 		i++;
 	return (i);
 }

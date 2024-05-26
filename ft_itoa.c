@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 00:46:58 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 18:13:58 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 18:03:03 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	check_neg(int n)
 
 long	my_abs(long len)
 {
-	int	ans;
-
 	if (len < 0)
 		return (-len);
 	return (len);
@@ -62,6 +60,8 @@ char	*ft_itoa(int n)
 	modulo = 10;
 	neg = check_neg(n);
 	ans = (char *) malloc(sizeof(char) * (len + neg + 1));
+	if (ans == NULL)
+		return (NULL);
 	ans[len + neg] = '\0';
 	while (len--)
 	{

@@ -6,11 +6,13 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:23:34 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/19 16:59:01 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/26 15:22:01 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	islower(int c)
+#include "libft.h"
+
+static int	ft_islower(int c)
 {
 	if (c <= 'z' && c >= 'a')
 	{
@@ -19,7 +21,7 @@ static int	islower(int c)
 	return (0);
 }
 
-static int	isupper(int c)
+static int	ft_isupper(int c)
 {
 	if (c <= 'Z' && c >= 'A')
 	{
@@ -30,7 +32,7 @@ static int	isupper(int c)
 
 int	ft_isalpha(int c)
 {
-	if ((islower(c)) || (isupper(c)))
+	if ((ft_islower(c)) || (ft_isupper(c)))
 	{
 		return (1);
 	}
