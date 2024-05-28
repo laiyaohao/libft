@@ -6,7 +6,7 @@
 #    By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/19 19:24:17 by ylai              #+#    #+#              #
-#    Updated: 2024/05/26 16:11:21 by ylai             ###   ########.fr        #
+#    Updated: 2024/05/28 16:41:04 by ylai             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS := ${SRCS:.c=.o}
 BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_OBJS := ${BONUS:.c=.o}
 
 # Default target
 all: ${NAME}
@@ -32,10 +33,11 @@ ${NAME}: ${OBJS}
 %.o: %.c
 	${CC} -c ${CFLAGS} $< -o $@
 
-bonus:
+bonus: ${BONUS_OBJS}
+	ar rcs ${NAME} ${BONUS_OBJS}
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${BONUS_OBJS}
 fclean: clean
 	rm -f ${NAME}
 re: fclean all
