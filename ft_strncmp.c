@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 20:33:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/25 18:25:26 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/29 20:19:29 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	s2u = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (i < n && s1u[i] == s2u[i])
+	while (i < (n - 1) && s1u[i] == s2u[i] && s1u[i] && s2u[i])
 	{
 		i++;
 	}

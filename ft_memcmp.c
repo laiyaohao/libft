@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 19:47:01 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/25 18:28:01 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/29 20:27:13 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	s2c = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (i < n && s1c[i] == s2c[i])
+	while (i < (n - 1) && s1c[i] == s2c[i])
 	{
 		i++;
 	}

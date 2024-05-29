@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 20:43:17 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/22 18:51:43 by ylai             ###   ########.fr       */
+/*   Updated: 2024/05/29 20:41:07 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*ans;
+	char	*s_cp;
+	size_t	s_len;
 
 	i = 0;
 	ans = (char *)malloc((len + 1) * (sizeof(char)));
-	if (ans == NULL)
+	s_cp = (char *)s;
+	s_len = ft_strlen(s);
+	if (ans == NULL || start >= s_len)
 	{
 		return (NULL);
 	}
-	while (i < len)
+	while (i < len && s_cp[start + i])
 	{
-		ans[i] = s[start + i];
+		ans[i] = s_cp[start + i];
 		i++;
 	}
-	ans[start + i] = '\0';
+	ans[i] = '\0';
 	return (ans);
 }
