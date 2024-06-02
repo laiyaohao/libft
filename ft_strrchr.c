@@ -6,13 +6,11 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 18:45:35 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/29 19:46:13 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 14:36:09 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include "ft_strlen.c"
 
 /**
  * @brief Locates a character in string.
@@ -27,29 +25,18 @@
  */
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*s1_cpy;
-	size_t	len;
-	char	c_typed;
+	char	*last_match;
 
-	len = ft_strlen(s);
-	s1_cpy = (char *)s;
-	c_typed = (char) c;
-	while (len >= 0)
+	last_match = NULL;
+	while (*s)
 	{
-		if (s[len] == c_typed)
+		if (*s == (char)c)
 		{
-			return (&(s1_cpy[len]));
+			last_match = (char *)s;
 		}
-		len--;
+		s++;
 	}
-	return (0);
+	if ((char)c == 0)
+		return ((char *)s + ft_strlen(s));
+	return (last_match);
 }
-
-// int	main(void)
-// {
-// 	char		str2[] = "bonjour";
-// 	char *ans = ft_strrchr(str2, '\0');
-// 	printf("ans: ");
-// 	write(1, ans, 1);
-// 	write(1, "\n",1);
-// }

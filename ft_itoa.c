@@ -6,35 +6,13 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 00:46:58 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/26 18:03:03 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 21:06:08 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_neg(int n)
-{
-	int	neg;
-
-	if (n < 0)
-	{
-		neg = 1;
-	}
-	else
-	{
-		neg = 0;
-	}
-	return (neg);
-}
-
-long	my_abs(long len)
-{
-	if (len < 0)
-		return (-len);
-	return (len);
-}
-
-int	find_len(int n)
+static int	find_len(int n)
 {
 	int	len;
 
@@ -58,14 +36,14 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		len = 1;
 	modulo = 10;
-	neg = check_neg(n);
+	neg = ft_isnegative(n);
 	ans = (char *) malloc(sizeof(char) * (len + neg + 1));
 	if (ans == NULL)
 		return (NULL);
 	ans[len + neg] = '\0';
 	while (len--)
 	{
-		ans[len + neg] = ((my_abs(n % modulo)) / (modulo / 10)) + 48;
+		ans[len + neg] = ((ft_abs(n % modulo)) / (modulo / 10)) + 48;
 		modulo *= 10;
 	}
 	if (neg)

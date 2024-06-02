@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 21:32:24 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/26 16:14:33 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 17:18:39 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return ((char *) s);
 	i = 0;
 	len = ft_strlen(s);
-	ans = (char *)malloc(len * sizeof(char));
+	ans = (char *)malloc((len + 1) * sizeof(char));
 	if (ans == NULL)
 		return (NULL);
 	while (i < len)
@@ -32,5 +32,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ans[i] = c_f;
 		i++;
 	}
+	ans[i] = '\0';
 	return (ans);
 }

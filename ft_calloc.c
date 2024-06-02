@@ -6,12 +6,26 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 23:51:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/28 13:49:00 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 19:45:47 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief allocates memory for an array of nmemb elements of size bytes each and
+ * 		returns a pointer to the allocated memory. The memory is set to zero. If
+ * 		nmemb or size is 0, then calloc() returns either NULL, or a unique pointer
+ * 		value that can later be successfully passed to free(). If the
+ * 		multiplication of nmemb and size would result in integer overflow, then
+ * 		calloc() returns an error.
+ * @param nmemb number of elements
+ * @param size size of each element
+ * @return pointer to the allocated memory, which is suitably aligned for any
+ * 		built-in type. On error, these functions return NULL. NULL may also be
+ * 		returned by a successful call to malloc() with a size of zero, or by a
+ * 		successful call to calloc() with nmemb or size equal to zero.
+*/
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned long long	t_size;

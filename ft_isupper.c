@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 21:15:12 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 20:01:17 by ylai             ###   ########.fr       */
+/*   Created: 2024/06/02 19:17:27 by ylai              #+#    #+#             */
+/*   Updated: 2024/06/02 19:57:18 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Writes a character to a file descriptor.
- * @param c The character to write.
- * @param fd The file descriptor to write to.
- * @return None.
+ * @brief Checks if a given character is uppercase (A-Z).
+ * @param c The character to check.
+ * @return 1 if the character is uppercase, 0 otherwise.
 */
-void	ft_putchar_fd(char c, int fd)
+int	ft_isupper(int c)
 {
-	write(fd, &c, 1);
+	if (c <= 'Z' && c >= 'A')
+	{
+		return (1);
+	}
+	return (0);
 }

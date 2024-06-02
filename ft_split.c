@@ -6,13 +6,13 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:39:33 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/25 18:21:10 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 19:14:55 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	allocate(char **s, int index, int len)
+static int	allocate(char **s, int index, int len)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ int	allocate(char **s, int index, int len)
 	return (0);
 }
 
-int	fill(char const *s, char **ans, char c)
+static int	fill(char const *s, char **ans, char c)
 {
 	size_t	len;
 	int		i;
@@ -58,7 +58,7 @@ int	fill(char const *s, char **ans, char c)
 	return (0);
 }
 
-size_t	num_o(char const *s, char c)
+static size_t	num_o(char const *s, char c)
 {
 	size_t	num;
 	int		inside;

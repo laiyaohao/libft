@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 02:36:08 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/26 16:03:43 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 16:01:43 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	t_set = (char *)set;
 	len = ft_strlen(s1);
-	while (ft_strchr(s1, *t_set) != NULL)
+	while (i < len && ft_strchr(t_set, s1[i]) != NULL)
 	{
 		i++;
 	}
-	while (ft_strrchr(s1, *t_set) != NULL)
+	while (j < len && ft_strrchr(t_set, s1[len - j - 1]) != NULL)
 	{
 		j++;
 	}
+	if (i == len && j == len)
+		return (ft_substr(s1, 0, 0));
 	size = len - i - j;
-	return (ft_substr(s1, i, size));
+	return (ft_substr(s1 + i, 0, size));
 }

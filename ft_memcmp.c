@@ -6,12 +6,20 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 19:47:01 by ylai              #+#    #+#             */
-/*   Updated: 2024/05/29 20:27:13 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 21:12:34 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compares two blocks of memory.
+ * @param s1 The first block of memory to compare.
+ * @param s2 The second block of memory to compare.
+ * @param n The maximum number of bytes to compare.
+ * @return 0 if the blocks of memory are equal, < 0 if s1 < s2, > 0 if s1 > s2.
+ * @details If n is 0, the function returns 0.
+*/
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*s1c;
