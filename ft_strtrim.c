@@ -6,12 +6,18 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 02:36:08 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 16:01:43 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 22:01:32 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Removes leading and trailing characters from a string.
+ * @param s1 The string to trim.
+ * @param set The set of characters to remove.
+ * @return The trimmed string.
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;

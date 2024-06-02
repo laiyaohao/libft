@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 23:51:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 19:45:47 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/02 22:18:57 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * 		nmemb or size is 0, then calloc() returns either NULL, or a unique pointer
  * 		value that can later be successfully passed to free(). If the
  * 		multiplication of nmemb and size would result in integer overflow, then
- * 		calloc() returns an error.
+ * 		calloc() returns an error, which is NULL.
  * @param nmemb number of elements
  * @param size size of each element
  * @return pointer to the allocated memory, which is suitably aligned for any
