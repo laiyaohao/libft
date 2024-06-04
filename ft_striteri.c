@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 21:55:25 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 20:06:15 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/04 16:17:04 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
  * @param s The string to apply the function to.
  * @param f The function to apply.
  * @return None.
- * @note The function must be able to work on a NULL pointer.
- * @note The function must be able to work on an empty string.
- * @note The function must be able to work on a string of length 1.
- * @note The function must not modify the string passed as argument.
- * @note The function must be able to work on a string of any length.
+ * @note The function first find the length of the string. using
+ * ft_strlen. Then it loops through the string and apply the function `f`
+ * to each character. If the string is a NULL pointer, ft_strlen will return 0. 
+ * The loop will then do nothing. If the function is a NULL pointer, the
+ * function will do nothing.
 */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

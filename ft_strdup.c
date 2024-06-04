@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 00:17:16 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 20:04:19 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/04 14:28:24 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
  * @details If the allocation fails, NULL is returned.
  * 		Otherwise, a pointer to the duplicated string is returned.
  * 		Both strings are guaranteed to be null-terminated.
+ * @note The function first finds the length of the string, using `ft_strlen`.
+ * Then, it allocates length + 1 bytes of memory using `malloc`. If there is
+ * an error during memory allocation, `NULL` is returned. Otherwise, the original
+ * string is being looped through, allocating each byte of the memory block to
+ * each character of the string. Finally, the last byte of the memory block is
+ * set to 0. The function returns a pointer to the duplicated string.
 */
 char	*ft_strdup(const char *s)
 {

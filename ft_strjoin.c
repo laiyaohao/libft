@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 00:20:27 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 20:07:19 by ylai             ###   ########.fr       */
+/*   Updated: 2024/06/04 19:31:57 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
  * @param s1 The first string.
  * @param s2 The second string.
  * @return The concatenated string.
- * @details If either s1 or s2 is NULL, returns NULL.
- * @details If the memory allocation fails, returns NULL.
- * 		Otherwise, a pointer to the concatenated string is returned.
- * 		Both strings are guaranteed to be null-terminated.
+ * @note the function first finds the length of s1 and s2. Then, it allocates
+ * 		enough memory to hold the concatenated string. If the memory allocation
+ * 		fails, the function returns NULL. Otherwise, the function copies the
+ * 		characters of s1 and s2 to the new string. Then the function adds the 
+ * 		null terminator to the end of the string and returns it.
 */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
